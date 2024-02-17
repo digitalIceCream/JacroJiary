@@ -1,11 +1,9 @@
 /*
 Author:			John-Philipp Vogt
-Date:			2024-
-Synopsis:		
-Filename:		
+Date:			2024-02-17
+Synopsis:		Main JJ source file.
+Filename:		JJ.java
 */
-
-//import Ingredient;
 
 public class JJ {
 
@@ -22,7 +20,6 @@ public class JJ {
 			
 			if (choice == 0) {
 				System.out.printf("Choice is %d%n", choice);
-				System.out.flush();
 			}
 			else if (choice == 1) {
 				System.out.printf("Choice is %d%n", choice);
