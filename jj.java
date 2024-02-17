@@ -18,11 +18,7 @@ public class jj {
 			System.out.println("<daily macro budget placeholder>\n");
 
 		do {
-			System.out.println("Please choose:");
-			System.out.println("0 -- View current budget.");
-			System.out.println("1 -- Edit meal.");
-			System.out.println("2 -- Record a new meal.");
-			System.out.println("3 -- Exit program.");
+			Menu.main();
 
 
 		} while (isActive);
