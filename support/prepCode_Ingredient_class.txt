@@ -1,0 +1,9 @@
+## Instance variable
+DECLARE a String to hold the name of the ingredient
+DECLARE a float to hold the total amount of the ingredient
+DECLARE a float to hold the amount of fat per 100g
+DECLARE a float to hold the amount of carbs per 100g
+DECLARE a float to hold the amount of proteins per 100g
+DECLARE a hashMap to hold the per 100g macros and the name?
+
+DECLARE getters and setters for each instance variable 

@@ -1,0 +1,17 @@
+Given the following objects
+
+- Meal and
+- Ingredients
+
+where Meal is representing one meal (e.g. breakfast, BPC, snack, drinks, etc.),
+which consists of a list of ingredients, and Ingredient is a set of (at least)
+four values (macro nutrients per 100g, amount of ingredient), the high-level
+capabilities of this programme include:
+
+1. Capturing a meal via user input and storing it persistently.
+	1.a. Including writing and reading a meal to disk in an appropriate 
+	     format (preferably json, xml or a like).
+	1.b. Including writing and reading each meal's ingredients into a 
+	     searchable database-table (SQL).
+
+
