@@ -7,17 +7,20 @@ Filename:		Menu.java
 
  class Menu {
 
-	 static void main() {
-
-		 // int numberOfOptions = 4;
+	 static int main() {
 
 		 System.out.println("Please choose:");
+		 System.out.println("");
 		 System.out.println("0 -- View current budget.");
 		 System.out.println("1 -- Edit meal.");
 		 System.out.println("2 -- Record a new meal.");
 		 System.out.println("3 -- Exit program.");
+		 System.out.println("");
 
-		 // UserInteraction.getUserInput(4);
+		 int choice = UserInteraction.getUserInput();
+
+		 return choice;
+
 		}
 }
 
