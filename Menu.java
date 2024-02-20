@@ -5,7 +5,7 @@ Synopsis:		Helper class containing static methods for menus.
 Filename:		Menu.java
 */
 
- class Menu {
+class Menu {
 
 	 static int main() {
 
@@ -23,5 +23,3 @@ Filename:		Menu.java
 
 		}
 }
-
-
