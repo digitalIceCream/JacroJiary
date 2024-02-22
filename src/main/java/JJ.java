@@ -29,13 +29,23 @@ public class JJ {
 			// Record a new meal.
 			else if (choice == 2) {
 				System.out.printf("Choice is %d%n", choice);
-				Ingredient myIngredient = new Ingredient(
-						"Butter", 8f, 82f, 1.0f, 0.8f);
-				for (String i : myIngredient.
-						macroNutrientsTotal.
-						keySet()) {
-				System.out.println(i);
-				}
+				System.out.printf("\nArgument list is: Butter, 8f, 82f, 1.0f, 0.8f");
+				
+				Ingredient myIngredient = new Ingredient("Butter", 8f, 82f, 1.0f, 0.8f);
+				System.out.println("Init values are: ");
+				System.out.println(myIngredient.getFatPer100g());
+				System.out.println(myIngredient.getCarbsPer100g());
+				System.out.println(myIngredient.getProteinsPer100g());
+				System.out.println("Total amount is: ");
+				System.out.println(myIngredient.getAmount());
+				myIngredient.setFatPer100g(50f);
+				myIngredient.setCarbsPer100g(50f);
+				myIngredient.setProteinsPer100g(50f);
+				System.out.println(myIngredient.getFatPer100g());
+				System.out.println(myIngredient.getCarbsPer100g());
+				System.out.println(myIngredient.getProteinsPer100g());
+				myIngredient.getTotalMacroNutrients();
+
 			}
 			// Exit program.
 			else if (choice == 3) {
