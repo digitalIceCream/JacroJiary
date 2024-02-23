@@ -20,36 +20,40 @@ public class JJ {
 
 			// View current budget.
 			if (choice == 0) {
-				System.out.printf("Choice is %d%n", choice);
 			}
 			// Edit meal.
 			else if (choice == 1) {
-				System.out.printf("Choice is %d%n", choice);
 			}
 			// Record a new meal.
 			else if (choice == 2) {
-				System.out.printf("Choice is %d%n", choice);
 				System.out.printf("\nArgument list is: Butter, 8f, 82f, 1.0f, 0.8f");
-				
 				Ingredient myIngredient = new Ingredient("Butter", 8f, 82f, 1.0f, 0.8f);
-				System.out.println("Init values are: ");
-				System.out.println(myIngredient.getFatPer100g());
-				System.out.println(myIngredient.getCarbsPer100g());
-				System.out.println(myIngredient.getProteinsPer100g());
-				System.out.println("Total amount is: ");
+				System.out.print("\n\nTotal amount is:\t");
 				System.out.println(myIngredient.getAmount());
-				myIngredient.setFatPer100g(50f);
-				myIngredient.setCarbsPer100g(50f);
-				myIngredient.setProteinsPer100g(50f);
+				System.out.println("\nPer 100g values are: ");
+				System.out.print("Fat :\t\t\t");
 				System.out.println(myIngredient.getFatPer100g());
+				System.out.print("Carbs :\t\t\t");
 				System.out.println(myIngredient.getCarbsPer100g());
+				System.out.print("Proteins :\t\t");
 				System.out.println(myIngredient.getProteinsPer100g());
 				myIngredient.getTotalMacroNutrients();
-
+				myIngredient.setCarbsPer100g(50f);
+				System.out.print("\n\n******************************\n\n");
+				System.out.print("\n\nTotal amount is:\t");
+				System.out.println(myIngredient.getAmount());
+				System.out.println("\nPer 100g values are: ");
+				System.out.print("Fat :\t\t\t");
+				System.out.println(myIngredient.getFatPer100g());
+				System.out.print("Carbs :\t\t\t");
+				System.out.println(myIngredient.getCarbsPer100g());
+				System.out.print("Proteins :\t\t");
+				System.out.println(myIngredient.getProteinsPer100g());
+				myIngredient.getTotalMacroNutrients();
 			}
+
 			// Exit program.
 			else if (choice == 3) {
-				System.out.printf("Choice is %d%n", choice);
 				isActive = false;
 			}
 		

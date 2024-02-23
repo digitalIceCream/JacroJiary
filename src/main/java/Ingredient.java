@@ -24,22 +24,22 @@ class Ingredient {
 
 	Ingredient(String ingredientName) {
 		name = ingredientName;
-		System.out.printf("This is %s.\n", name);
-		}
+		System.out.printf("\n\nThis is %s.\n", name);
+	}
 
 	Ingredient(String ingredientName, float ingredientAmount, float fatPer100g, float carbsPer100g,
-			float proteinPer100g) {
+			float proteinsPer100g) {
 
-		name = ingredientName;
-		amount = ingredientAmount;
+		this.name = ingredientName;
+		this.amount = ingredientAmount;
 
-		macroNutrientsPer100g.put(fat, fatPer100g);
-		macroNutrientsPer100g.put(carbs, carbsPer100g);
-		macroNutrientsPer100g.put(proteins, proteinPer100g);
+		this.macroNutrientsPer100g.put(this.fat, fatPer100g);
+		this.macroNutrientsPer100g.put(this.carbs, carbsPer100g);
+		this.macroNutrientsPer100g.put(this.proteins, proteinsPer100g);
 
-		macroNutrientsTotal.put(fat, (ingredientAmount/100)*fatPer100g);
-		macroNutrientsTotal.put(carbs, (ingredientAmount/100)*carbsPer100g);
-		macroNutrientsTotal.put(proteins, (ingredientAmount/100)*proteinPer100g);
+		this.macroNutrientsTotal.put(this.fat, (fatPer100g/100 * ingredientAmount));
+		this.macroNutrientsTotal.put(this.carbs, (carbsPer100g/100 * ingredientAmount));
+		this.macroNutrientsTotal.put(this.proteins, (proteinsPer100g/100 * ingredientAmount));
 
 		System.out.printf("This is %s at %.2f.\n", name, ingredientAmount);
 		}
@@ -55,7 +55,7 @@ class Ingredient {
 
 	public void setAmount(float newAmount) {
 		this.amount = newAmount;
-		recalculateTotalMacroNutrients(newAmount);
+		recalculateTotalMacroNutrients();
 	}
 
 	public float getAmount() {
@@ -65,7 +65,7 @@ class Ingredient {
 	// Per 100g values
 	public void setFatPer100g(float newAmount) {
 		this.macroNutrientsPer100g.put(fat, newAmount);
-		recalculateTotalMacroNutrients(this.amount);
+		recalculateTotalMacroNutrients();
 	}
 
 	public float getFatPer100g() {
@@ -74,7 +74,7 @@ class Ingredient {
 
 	public void setCarbsPer100g(float newAmount) {
 		this.macroNutrientsPer100g.put(carbs, newAmount);
-		recalculateTotalMacroNutrients(this.amount);
+		recalculateTotalMacroNutrients();
 	}
 
 	public float getCarbsPer100g() {
@@ -83,7 +83,7 @@ class Ingredient {
 			
 	public void setProteinsPer100g(float newAmount) {
 		this.macroNutrientsPer100g.put(proteins, newAmount);
-		recalculateTotalMacroNutrients(this.amount);
+		recalculateTotalMacroNutrients();
 
 	}
 
@@ -93,29 +93,18 @@ class Ingredient {
 
 	// Get macros for Ingredient of amount this.amount
 	public void getTotalMacroNutrients() {
-		System.out.printf("%.2f grams of %s contains: \n", this.amount, this.name);
-		System.out.println(this.getFatPer100g() * this.amount);
-		System.out.println(this.getCarbsPer100g() * this.amount);
-		System.out.println(this.getFatPer100g() * this.amount);
+		System.out.printf("%.2f gram(s) of %s contains: \n", this.amount, this.name);
+		System.out.print("Fat :\t\t\t");
+		System.out.println(this.getFatPer100g()/100 * this.amount);
+		System.out.print("Carbs :\t\t\t");
+		System.out.println(this.getCarbsPer100g()/100 * this.amount);
+		System.out.print("Protein :\t\t");
+		System.out.println(this.getProteinsPer100g()/100 * this.amount);
 	}
-	
 
-	private void recalculateTotalMacroNutrients(float amount) {
-		macroNutrientsTotal.put(this.fat, (amount/100)*this.getFatPer100g());
-		macroNutrientsTotal.put(this.carbs, (amount/100)*this.getCarbsPer100g());
-		macroNutrientsTotal.put(this.fat, (amount/100)*this.getProteinsPer100g());
+	private void recalculateTotalMacroNutrients() {
+		macroNutrientsTotal.put(this.fat, (this.amount/100)*this.getFatPer100g());
+		macroNutrientsTotal.put(this.carbs, (this.amount/100)*this.getCarbsPer100g());
+		macroNutrientsTotal.put(this.fat, (this.amount/100)*this.getProteinsPer100g());
 	}
-	
-
-
-
-
-
-
-
-
-
-	
-
-
 }
